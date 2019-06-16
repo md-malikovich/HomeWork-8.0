@@ -12,11 +12,12 @@ public class Warrior extends Hero {
 
     @Override
     public void useAbility(Hero[] heroes, Boss boss) {
-
-        for (int i = 0; i < heroes.length; i++) {
-            int currentAttack1 = heroes[i].getAttack();
-            heroes[i].setAttack(currentAttack1 + boss.getAttack());
+        if (getHealth() > 0) {
+            int currentAttack = heroes[0].getAttack();
+            heroes[0].setAttack(currentAttack + boss.getAttack());    // свой урон (currentAttack) + полученный от босса (boss.getAttack())
+        } else {
+            setAttack(getAttack() * 0);
         }
     }
 }
-// Warrior должен получать от босса урон, и потом наносить ему свой урон + полученный от босса   +
+// ДЗ - Warrior должен получать от босса урон, и потом наносить ему свой урон + полученный от босса   +

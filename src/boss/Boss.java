@@ -6,16 +6,16 @@ import game.GameEntity;
 public class Boss extends GameEntity {
 
     public Boss(int health, int attack) {
+
         super(health, attack);
     }
 
+    @Override
     public int getAttack() {
 
         Random rand = new Random();
-        for (int i = 30; i <= 100; i++) {
-            int n = rand.nextInt(50);
-            return n;
-        } return 0;
+        int i = rand.nextInt(100);    // Каждый удар Босса имеет рандомный урон в пределах 100
+        return i;
     }
 }
 // Задание на сообразительность - Каждый удар Босса имеет рандомный урон   +
