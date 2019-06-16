@@ -13,8 +13,7 @@ public class Warrior extends Hero {
     @Override
     public void useAbility(Hero[] heroes, Boss boss) {
         if (getHealth() > 0) {
-            int currentAttack = heroes[0].getAttack();
-            heroes[0].setAttack(currentAttack + boss.getAttack());    // свой урон (currentAttack) + полученный от босса (boss.getAttack())
+            setAttack(getAttack() + boss.getAttack());    // свой урон (currentAttack) + полученный от босса (boss.getAttack())
         } else {
             setAttack(getAttack() * 0);
         }
